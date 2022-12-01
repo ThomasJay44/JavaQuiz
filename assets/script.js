@@ -4,6 +4,9 @@ var li2 = document.querySelector(".answerTwo");
 var li3 = document.querySelector(".answerThree");
 var li4 = document.querySelector(".answerFour");
 var timer = document.querySelector(".timer");
+var startQuiz
+var startButton
+var nextQuestion
 
 var questionOne = {
     question: "Question one text",
@@ -49,7 +52,7 @@ var questionList = [questionOne, questionTwo, questionThree, questionFour, quest
 var timeRemaing = 100;
 var currentQuestion = 0;
 
-startQuiz.addEventListener("click", displayQuestion)
+startQuiz.addEventListener("click", displayQuestion);
 
 function startQuiz() {
     var timeinterval = setInterval(function() {
@@ -59,12 +62,21 @@ function startQuiz() {
         if (timeLeft === 0) {
             clearInterval(timeInterval);
         }
-
     }, 1000)
 }
 
+function displayQuestion() {
+    h1El.textContent = questionList[num].question
+    li1.textContent = questionList[num].answerOne[0]
+    li2.textContent = questionList[num].answerTwo[0]
+    li3.textContent = questionList[num].answerThree[0]
+    li4.textContent = questionList[num].answerFour[0]
+    currentQuestion++
+    
+}
+
 function nextQuestion() {
-    if (anser === false) {
+    if (answer === false) {
         timeLeft -= 15
         displayQuestion(num)
     }
