@@ -56,7 +56,20 @@ function startQuiz() {
         timeLeft--;
         timer.textContent = timeLeft + " seconds remaining";
         displayQuestion();
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+        }
 
-    })
+    }, 1000)
+}
+
+function nextQuestion() {
+    if (anser === false) {
+        timeLeft -= 15
+        displayQuestion(num)
+    }
+    else {
+        displayQuestion(num)
+    }
 }
 
