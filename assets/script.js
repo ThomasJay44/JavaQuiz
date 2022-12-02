@@ -4,47 +4,47 @@ var li2 = document.querySelector(".answerTwo");
 var li3 = document.querySelector(".answerThree");
 var li4 = document.querySelector(".answerFour");
 var timer = document.querySelector(".timer");
-var startQuiz
-var startButton
-var nextQuestion
-
+var startQuiz = document.querySelector("")
+var startButton = document.querySelector
+var nextQuestion = document.querySelector
+ 
 var questionOne = {
-    question: "Question one text",
-    answerOne:["a", true],
-    answerTwo:["b", true],
-    answerThree:["c", true],
-    answerFour:["d", false],
+    question: "Which of these is a color",
+    answerOne:["orange", true],
+    answerTwo:["banana", false],
+    answerThree:["jacket", false],
+    answerFour:["box", false],
 }
 
 var questionTwo = {
-    question: "Question two text",
-    answerOne:["a", false],
-    answerTwo:["b", true],
-    answerThree:["c", true],
-    answerFour:["d", true]
+    question: "Which of these is a number",
+    answerOne:["apple", false],
+    answerTwo:["Television", false],
+    answerThree:["gorilla", false],
+    answerFour:["seven", true]
 }
 
 var questionThree = {
-    question: "Question three text",
-    answerOne:["a", true],
-    answerTwo:["b", false],
-    answerThree:["c", true],
-    answerFour:["d", true]
+    question: "Which is not a shape",
+    answerOne:["circle", false],
+    answerTwo:["square", false],
+    answerThree:["hexagon", false],
+    answerFour:["the pentagon", true]
 }
 
 var questionFour = {
     question: "Question four text",
     answerOne:["a", true],
-    answerTwo:["b", true],
-    answerThree:["c", true],
+    answerTwo:["b", false],
+    answerThree:["c", false],
     answerFour:["d", false]
 }
 
 var questionFour = {
     question: "Question five text",
     answerOne:["a", true],
-    answerTwo:["b", true],
-    answerThree:["c", true],
+    answerTwo:["b", false],
+    answerThree:["c", false],
     answerFour:["d", false]
 }
 
@@ -53,7 +53,7 @@ var timeRemaing = 100;
 var currentQuestion = 0;
 
 startQuiz.addEventListener("click", displayQuestion);
-
+//starts quiz
 function startQuiz() {
     var timeinterval = setInterval(function() {
         timeLeft--;
@@ -64,7 +64,7 @@ function startQuiz() {
         }
     }, 1000)
 }
-
+//cycles through questions
 function displayQuestion() {
     h1El.textContent = questionList[num].question
     li1.textContent = questionList[num].answerOne[0]
@@ -74,7 +74,7 @@ function displayQuestion() {
     currentQuestion++
     
 }
-
+//deduct time from timer
 function nextQuestion() {
     if (answer === false) {
         timeLeft -= 15
